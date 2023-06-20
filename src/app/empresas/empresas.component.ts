@@ -62,5 +62,12 @@ export class EmpresasComponent implements OnInit{
 
     )
   }
+  remove(empresa : Empresa): void{
+    this.empresaService.remove(empresa).subscribe(
+       {
+         next : () => this.loadEmpresas()
+       })
+
+   }
 
 }

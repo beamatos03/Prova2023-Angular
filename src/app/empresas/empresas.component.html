@@ -53,6 +53,7 @@
           <th scope="col">Telefone</th>
           <th scope="col">Ramo</th>
           <th scope="col">Endereço</th>
+          <th scope="col" class="d-flex justify-content-end">...</th>
         </tr>
       </thead>
       <tbody>
@@ -64,6 +65,9 @@
           <td>{{empresa.telefone}}</td>
           <td>{{empresa.ramo}}</td>
           <td>{{empresa.endereco}}</td>
+          <td class="d-flex justify-content-end">
+            <button class="btn btn-danger" (click)="remove(empresa)">Excluir</button>
+          </td>
         </tr>
       </tbody>
     </table>

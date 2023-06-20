@@ -22,4 +22,10 @@ export class EmpresaService {
 
     return this.http.get<Empresa[]>(this.url);
   }
+
+
+ remove(empresa: Empresa): Observable<void>{
+  return this.http.delete<void>(`${this.url}/${empresa.id}`);
+ }
+
 }
