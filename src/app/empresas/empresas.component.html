@@ -1,38 +1,71 @@
-<form class="" [formGroup]="formGroupEmpresa">
-  <div class="form-group">
-    <label for="txtNome">Nome</label>
-    <input type="text" formControlName="nome" class="form-control" id="txtNome" placeholder="Nome do estabelecimento">
-  </div>
-  <div class="form-group">
-    <label for="cnpj">CNPJ</label>
-    <input type="number" formControlName="cnpj" class="form-control" id="cnpj" placeholder="Somente números do CNPJ">
-  </div>
-  <div class="form row">
-    <div class="form-group col-md-6">
-      <label for="txtemail">Email</label>
-      <input type="email" class="form-control" formControlName="email" id="txtemail" placeholder="Email para contato">
+<div class="conteudo">
+<div class="display-6">CADASTRE SUA EMPRESA</div>
+  <form class="" [formGroup]="formGroupEmpresa">
+    <div class="form-group">
+      <label for="txtNome">Nome</label>
+      <input type="text" formControlName="nome" class="form-control" id="txtNome" placeholder="Nome do estabelecimento">
     </div>
-    <div class="form-group col-md-6">
-      <label for="nbTelefone">Telefone</label>
-      <input type="number" formControlName="telefone" class="form-control" id="nbTelefone" placeholder="Número para contato">
+    <div class="form-group">
+      <label for="cnpj">CNPJ</label>
+      <input type="number" formControlName="cnpj" class="form-control" id="cnpj" placeholder="Somente números do CNPJ">
     </div>
-  </div>
-  <div class="row">
-  <div class="form-group col-md-8">
-    <label for="txtEndereco">Endereço</label>
-    <input type="text" formControlName="endereco" class="form-control" id="txtEndereco" placeholder="Av. exemplo - Bairro 123">
-  </div>
-    <div class="form-group col-md-4">
-      <label for="inputState">Ramo de atuação</label>
-      <select id="slctRamo" class="form-control"
-      (change)="changeRamo($event)"
-      formControlName="ramo">
-      <option value="">Ramo de atuação</option>
-      <option *ngFor="let ramo of ramo" [ngValue]="ramo">
-        {{ ramo }}
-      </option>
-      </select>
+    <div class="form row">
+      <div class="form-group col-md-6">
+        <label for="txtemail">Email</label>
+        <input type="email" class="form-control" formControlName="email" id="txtemail" placeholder="Email para contato">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="nbTelefone">Telefone</label>
+        <input type="number" formControlName="telefone" class="form-control" id="nbTelefone" placeholder="Número para contato">
+      </div>
     </div>
+    <div class="row">
+    <div class="form-group col-md-8">
+      <label for="txtEndereco">Endereço</label>
+      <input type="text" formControlName="endereco" class="form-control" id="txtEndereco" placeholder="Av. exemplo - Bairro 123">
+    </div>
+      <div class="form-group col-md-4">
+        <label for="inputState">Ramo de atuação</label>
+        <select id="slctRamo" class="form-control"
+        (change)="changeRamo($event)"
+        formControlName="ramo">
+        <option value="">Ramo de atuação</option>
+        <option *ngFor="let ramo of ramo" [ngValue]="ramo">
+          {{ ramo }}
+        </option>
+        </select>
+      </div>
+    </div>
+    <button (click)="save()" class="btn btn-primary">Salvar</button>
+  </form>
+
+  <div class="tabela mt-5 col-lg-12">
+    <div class="display-6">
+      EMPRESAS DISPONÍVEIS
+    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Nome</th>
+          <th scope="col">CNPJ</th>
+          <th scope="col"> E-mail</th>
+          <th scope="col">Telefone</th>
+          <th scope="col">Ramo</th>
+          <th scope="col">Endereço</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let empresa of empresas">
+          <th scope="row">{{ empresa.id }}</th>
+          <td>{{empresa.nome}}</td>
+          <td>{{empresa.cnpj}}</td>
+          <td>{{empresa.email}}</td>
+          <td>{{empresa.telefone}}</td>
+          <td>{{empresa.ramo}}</td>
+          <td>{{empresa.endereco}}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-  <button (click)="save()" class="btn btn-primary">Salvar</button>
-</form>
+</div>

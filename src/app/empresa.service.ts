@@ -11,9 +11,15 @@ export class EmpresaService {
   url = "http://localhost:3000/empresas";
   constructor(private http: HttpClient) { }
 
+
   save(empresa: Empresa): Observable<Empresa>{
 
     return this.http.post<Empresa>(this.url, empresa);
 
+  }
+
+  getEmpresas(): Observable<Empresa[]>{
+
+    return this.http.get<Empresa[]>(this.url);
   }
 }

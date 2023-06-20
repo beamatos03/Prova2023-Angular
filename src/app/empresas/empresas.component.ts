@@ -39,7 +39,16 @@ export class EmpresasComponent implements OnInit{
     }
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.loadEmpresas();
+  }
+  loadEmpresas() {
+    this.empresaService.getEmpresas().subscribe(
+      {
+      next: dados => this.empresas = dados,
+      error: (msg) => console.log("Opa! Houve um erro na chamada do endpoint: " + msg)
+    }
+
+    )
   }
 
   save(){

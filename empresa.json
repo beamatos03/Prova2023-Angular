@@ -17,6 +17,15 @@
       "telefone": 11263673746,
       "ramo": "Educação",
       "endereco": "Av. Saudade - São Judas"
+    },
+    {
+      "id": 4,
+      "nome": "Casa de repouso",
+      "cnpj": 333333333333333,
+      "email": "reposuo@gmail.com",
+      "telefone": 1189098598593,
+      "ramo": "Saúde",
+      "endereco": "Av. repouso - São Judas"
     }
   ]
 }
