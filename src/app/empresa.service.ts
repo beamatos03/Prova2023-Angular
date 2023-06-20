@@ -8,7 +8,7 @@ import { Empresa } from './empresa';
 })
 export class EmpresaService {
 
-  url = "http://localhost:3000/empresas";
+  url = "http://localhost:8080/empresas";
   constructor(private http: HttpClient) { }
 
 
