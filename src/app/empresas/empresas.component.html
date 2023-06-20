@@ -1,0 +1,38 @@
+<form class="" [formGroup]="formGroupEmpresa">
+  <div class="form-group">
+    <label for="txtNome">Nome</label>
+    <input type="text" formControlName="nome" class="form-control" id="txtNome" placeholder="Nome do estabelecimento">
+  </div>
+  <div class="form-group">
+    <label for="cnpj">CNPJ</label>
+    <input type="number" formControlName="cnpj" class="form-control" id="cnpj" placeholder="Somente números do CNPJ">
+  </div>
+  <div class="form row">
+    <div class="form-group col-md-6">
+      <label for="txtemail">Email</label>
+      <input type="email" class="form-control" formControlName="email" id="txtemail" placeholder="Email para contato">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="nbTelefone">Telefone</label>
+      <input type="number" formControlName="telefone" class="form-control" id="nbTelefone" placeholder="Número para contato">
+    </div>
+  </div>
+  <div class="row">
+  <div class="form-group col-md-8">
+    <label for="txtEndereco">Endereço</label>
+    <input type="text" formControlName="endereco" class="form-control" id="txtEndereco" placeholder="Av. exemplo - Bairro 123">
+  </div>
+    <div class="form-group col-md-4">
+      <label for="inputState">Ramo de atuação</label>
+      <select id="slctRamo" class="form-control"
+      (change)="changeRamo($event)"
+      formControlName="ramo">
+      <option value="">Ramo de atuação</option>
+      <option *ngFor="let ramo of ramo" [ngValue]="ramo">
+        {{ ramo }}
+      </option>
+      </select>
+    </div>
+  </div>
+  <button (click)="save()" class="btn btn-primary">Salvar</button>
+</form>

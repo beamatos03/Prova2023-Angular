@@ -1,0 +1,22 @@
+{
+  "empresas": [
+    {
+      "id": 1,
+      "nome": "JD Entertainment",
+      "cnpj": 17278282828282,
+      "email": "jdent@gmail.com",
+      "telefone": 1189075463,
+      "ramo": "Entretenimento",
+      "endereco": "AV. da Saudade"
+    },
+    {
+      "id": 2,
+      "nome": "Escola de ingles",
+      "cnpj": 222222222222222200,
+      "email": "escola@gmail.com",
+      "telefone": 11263673746,
+      "ramo": "Educação",
+      "endereco": "Av. Saudade - São Judas"
+    }
+  ]
+}
